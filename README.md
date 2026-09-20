@@ -28,6 +28,25 @@ This repository contains the following scripts for producing the dataset:
 7. `tweet.py`, which tweets an example image from the daily build.
 8. `azure_file_service.py`, which manages connections to Azure Files.
 9. `example_shabby_pipeline_generation.ipynb`, which is an example to generate shabby image from Augraphy and shabby pipeline using single input image.
+10. `image_editor.py`, a local, offline desktop image editor (Tkinter GUI).
+
+# Offline Image Editor App (Desktop GUI)
+
+`image_editor.py` is a standalone, fully local and offline image editing app built on Tkinter + Pillow, with a simplified input/output workflow:
+
+- **Input box**: opens files of *any extension* (the format is detected from the file contents), caps the longest side at **6000 px** with the other dimension auto-adjustable, and treats images at **600 DPI**.
+- **Output box (real-time preview)**: shows the adjusted result live as sliders move; export at *any* size (width, height or % scale, with the remaining dimension auto-adjustable) and print resolution capped at **max 600 DPI** (PNG, JPEG, WebP, TIFF, BMP).
+- **Draggable tools box**: a floating panel you can grab and move anywhere, with sliders for brightness, contrast, saturation, sharpness, rotation, text sharpening (unsharp), noise removal (median) and document binarization (Otsu auto or manual threshold), plus a hold-to-compare original button.
+
+Run it with:
+
+```bash
+python3 image_editor.py
+```
+
+Requirements: Python 3.8+, Pillow (already in `requirements.txt`) and Tkinter (`sudo apt install python3-tk` on Debian/Ubuntu; included by default in the python.org Windows/macOS installers). Core rules are covered by `test_image_editor.py` (`python3 test_image_editor.py`).
+
+On Ubuntu, `bash ubuntu/install.sh` installs the dependencies, adds an app icon and creates an "Editor de Imagens (Offline)" entry in the applications menu (see `ubuntu/README.md`).
 
 # Distortion Pipeline
 

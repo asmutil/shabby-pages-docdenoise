@@ -46,6 +46,8 @@ python3 image_editor.py
 
 Requirements: Python 3.8+, Pillow (already in `requirements.txt`) and Tkinter (`sudo apt install python3-tk` on Debian/Ubuntu; included by default in the python.org Windows/macOS installers). Core rules are covered by `test_image_editor.py` (`python3 test_image_editor.py`).
 
+On Ubuntu, `bash ubuntu/install.sh` installs the dependencies, adds an app icon and creates an "Editor de Imagens (Offline)" entry in the applications menu (see `ubuntu/README.md`).
+
 # Distortion Pipeline
 
 An **Augraphy** pipeline was applied to ground truth documents to generate _printed, scanned, copied_ and _faxed_ versions of documents encountered in the real world.  In order to preserve a pixel-level mapping between ground truth and distorted versions of documents, geometric transformations that skew or warp document images were avoided.
